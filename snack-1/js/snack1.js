@@ -8,31 +8,27 @@ Stampare a schermo la bici con peso minore utilizzando destructuring e template 
 const bici = [
   {
     nome: 'Bianchi',
-    peso: 2000
+    peso: 10
   },
   {
     nome:'Pininfarina',
-    peso: 4000
+    peso: 40
   },
   {
     nome: 'Atala',
-    peso: 3000
+    peso: 30
 
   }
 ];
 
-var leggero = bici[0];
-console.log(leggero);
+let biciLeggera = null;
 
-for (var i = 0; i < bici.length; i++) {
-  if (bici[i].peso < leggero.peso) {
-        leggero = bici[i];
-    }
+for (let i = 0; i < bici.length; i++) {
+
+  if ( biciLeggera == null || biciLeggera.peso > bici[i].peso ) {
+    biciLeggera = bici[i];
+  }
 }
 
-
-  console.log(
-  `
-  La bici piu leggera è ${leggero.nome}
-  `
-);
+const {nome, peso} = biciLeggera;
+console.log(` la bici leggera è  ${nome} infatti pesa ${peso} kg` );
