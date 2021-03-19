@@ -5,7 +5,7 @@ Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e pe
 Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 */
 
-var bici = [
+const bici = [
   {
     nome: 'Bianchi',
     peso: 2000
