@@ -21,14 +21,22 @@ const bici = [
   }
 ];
 
-let biciLeggera = null;
+ let biciLeggera = bici[0];
+//
+// for (let i = 0; i < bici.length; i++) {
+//
+//   if ( biciLeggera == null || biciLeggera.peso > bici[i].peso ) {
+//     biciLeggera = bici[i];
+//   }
+// }
 
-for (let i = 0; i < bici.length; i++) {
-
-  if ( biciLeggera == null || biciLeggera.peso > bici[i].peso ) {
-    biciLeggera = bici[i];
+//ES6 forEach
+bici.forEach((item, i, array) => {
+  if (item.peso < biciLeggera.peso) {
+    biciLeggera = item;
   }
-}
+});
+
 
 const {nome, peso} = biciLeggera;
 console.log(` la bici leggera è  ${nome} infatti pesa ${peso} kg` );

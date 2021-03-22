@@ -30,25 +30,34 @@ const teams = [
   },
 ];
 
-for (let i = 0; i < teams.length; i++) {
- teams[i].punti = getRandomNumber(1, 80);
- teams[i].falli = getRandomNumber(1, 30);
+// for (let i = 0; i < teams.length; i++) {
+//  teams[i].punti = getRandomNumber(1, 80);
+//  teams[i].falli = getRandomNumber(1, 30);
+// }
+
+
+//ES6 map
+const newTeams = teams.map((item, index, array) => {
+    item.punti = getRandomNumber(1, 80);
+    item.falli = getRandomNumber(1, 30);
+
+    const {nome, falli, punti} = item;
+    return {nome, falli};
 
 }
+);
+
+// for (let i = 0; i < teams.length; i++) {
+//   const {nome, falli, punti} = teams[i];
+//
+//   newTeams.push(
+//     {
+//       nome,
+//       falli
+//     }
+//
+//   );
+// }
 
 console.log(teams);
-
-const newTeams = [];
-
-for (let i = 0; i < teams.length; i++) {
-  const {nome, falli, punti} = teams[i];
-
-  newTeams.push(
-    {
-      nome,
-      falli
-    }
-    
-  );
-}
 console.log(newTeams);
